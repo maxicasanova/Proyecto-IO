@@ -1,0 +1,19 @@
+.landing{
+    background-image: url('https://cityspeakeasy.com/assets/images/landing-page/Italian-background.jpg');
+    /* background-image: url('https://cdn.zendalibros.com/wp-content/uploads/frases-de-dante.jpg'); */
+    /* background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4806e3a9-8a3e-4d57-85ae-194eccca2bf2/d33fd5y-8a3a76ca-b529-4697-92c4-99a932469957.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzQ4MDZlM2E5LThhM2UtNGQ1Ny04NWFlLTE5NGVjY2NhMmJmMlwvZDMzZmQ1eS04YTNhNzZjYS1iNTI5LTQ2OTctOTJjNC05OWE5MzI0Njk5NTcuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.dBel_PhAD1lU1XU0vUQ1W_pxj_jPyNVKjjqBZftLmfU'); */
+    background-size: cover;
+    background-position: right;
+    min-height:80vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media screen and (max-width:500px){
+    .landing {
+        background-repeat: no-repeat;
+        background-position: 87% 70%;
+    }
+}
