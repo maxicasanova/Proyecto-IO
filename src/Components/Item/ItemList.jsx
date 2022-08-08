@@ -30,9 +30,9 @@ function ItemList({elementos}) {
                 }} >
                 Todos los cursos
             </Typography>
-            <Typography variant="body1" gutterBottom>
+            {/* <Typography variant="body1" gutterBottom>
                 Los cursos se encuentran ordenados por nivel, se incluyen sincronicos y asincronicos.
-            </Typography>
+            </Typography> */}
             <Container 
                 sx={{
                     display: 'flex',

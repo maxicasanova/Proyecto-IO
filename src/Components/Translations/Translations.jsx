@@ -20,6 +20,12 @@ function Translations() {
         navigate('/mailform')
     }
 
+    const handleClickCitizenship = () => {
+        const elemento = {nombre:'Ciudadania'}
+        addOrder(getOrder(elemento, location));
+        navigate('/mailform')
+    }
+
     return (
         <Container 
             sx={{
@@ -91,10 +97,12 @@ function Translations() {
                     sx={{
                         display:'flex', 
                         flexDirection:'column',
+                        justifyContent:'space-around',
                         gap:'16px',
                         listStyleType: 'none',
                         fontWeight: '500',
                         maxWidth:'70vw',
+                        minHeight:{xs:'60vh', sm:'40vh'},
                         padding:'0px!important'
                     }}>
                     <Typography variant='p' component='li'>
@@ -111,18 +119,44 @@ function Translations() {
                     </Typography>
                 </Box>
                 <Box sx={{maxWidth:'70vw', mb:'15px'}}>
-                    <Typography>
-                        Para solicitar tu presupuesto envianos tus documentos escaneados o fotos legibles a agustina.ganami@filo.unt.edu.ar y contanos sobre tu caso. 
+                    <Typography sx={{
+                        bgcolor:amber[500],
+                        padding:'20px',
+                        boxShadow:'0px 1px 8px rgba(0,0,0,0.4)'
+                    }}>
+                        Para solicitar tu presupuesto envianos tus documentos escaneados o fotos legibles a agustina.ganami@filo.unt.edu.ar  
                     </Typography>
-                    <Typography>
+                    <Typography sx={{fontWeight:'700', mt:'20px'}}>
                         No te olvides de especificar:
-                        Tipo(s) de documento(s) y trámite(s) a realizar. 
-                        Dónde vas a presentar tus documentos (si vas a tramitar tu ciudadanía* en Italia indicanos si vas a optar por asseverazione o doble apostilla).
-                        Para cuándo necesitás el trabajo.
                     </Typography>
+                    <Box component='ul' 
+                    sx={{
+                        display:'flex', 
+                        flexDirection:'column',
+                        gap:'16px',
+                        listStyleType: 'none',
+                        maxWidth:'70vw',
+                        padding:'0px!important'
+                    }}>
+                        <Typography variant='p' component='li'>
+                        -Tipo(s) de documento(s) y trámite(s) a realizar. 
+                        </Typography>
+                        <Typography variant='p' component='li'>
+                        -Dónde vas a presentar tus documentos (si vas a tramitar tu ciudadanía* en Italia indicanos si vas a optar por asseverazione o doble apostilla).
+                        </Typography>
+                        <Typography variant='p' component='li'>
+                        -Para cuándo necesitás el trabajo.
+                        </Typography>
+                    </Box>
                     <Typography>
                         ¡Te responderemos en 24 hs. hábiles con un presupuesto hecho a tu medida!
                     </Typography>
+                    <Box sx={{mt:'20px', mb:'20px'}}>
+                        <Typography sx={{mb:'20px'}}>
+                        *Si querés revisar tu documentación o tenés alguna consulta sobre la ciudadanía italiana, ¡solicitá tu consulta gratuita con nuestra oficina de asesoría sobre ciudadanía italiana 
+                        </Typography>
+                        <Button variant='contained' color='secondary' onClick={() => {handleClickCitizenship()}} >Reserva de consulta de ciudadania</Button>
+                    </Box>
                 </Box>
             </Box>
         </Container>

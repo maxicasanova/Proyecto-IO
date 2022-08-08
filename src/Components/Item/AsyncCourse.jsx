@@ -119,7 +119,7 @@ function AsyncCourse({elemento}) {
                     bgcolor:amber[500],
                     boxShadow:'0px 1px 8px rgba(0,0,0,0.4)'
                 }}>
-                    <Typography variant='h5'>
+                    <Typography variant='h6'>
                         ¡Accedé al CURSO COMPLETO por sólo AR${elemento.precio} (pesos argentinos) o €{elemento.precioEuros} (euros)! 
                     </Typography>
                     <Typography variant='h5'>

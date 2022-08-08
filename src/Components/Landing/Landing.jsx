@@ -54,7 +54,7 @@ function Landing() {
                     width:{xs:'200px', sm:'400px'},
                     ml: {xs:'auto', sm:'9%'}
                 }} >
-                Aprende Italiano Hoy
+                ¡Aprendé italiano hoy!
             </Typography>
         </Box>
         <Sale />
@@ -71,7 +71,14 @@ function Landing() {
                 gap:'20px'
             }}>
             <AboutLanding />
-            <Button variant='contained' color='primary' onClick={() => navigate('/aboutus')}>¡Conocenos más!</Button>
+            <Button 
+                variant='contained' 
+                color='primary' 
+                onClick={() => navigate('/aboutus')}
+                sx={{mb:'10px'}}
+                >
+                    ¡Conocenos más!
+            </Button>
         </Box>
         </>
     )

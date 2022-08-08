@@ -29,12 +29,14 @@ function MailForm() {
     const [nombre, setNombre] = useState('');
     const [mail, setMail] = useState('');
     const [mensaje, setMensaje] = useState('');
+    const [telefono, setTelefono] = useState('');
     const [fecha, setFecha] = useState(new Date());
     const [comision, setComision] = useState('');
-    const [pais, setPais] = useState('Argentina');
+    const [pais, setPais] = useState('');
 
     const [nombreError, setNombreError] = useState(false);
     const [mailError, setMailError] = useState(false);
+    const [telefonoError, setTelefonoError] = useState(false);
     const [descripcionError, setDescripcionError] = useState(false);
     
     const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -49,9 +51,10 @@ function MailForm() {
             precioEuros: orders.precioEuros,
             nombreAlumno:nombre, 
             mailAlumno:mail, 
-            fechaNac:fecha._d || 'no ingreso fecha', 
+            fechaNac:fecha._d || 'no ingreso fecha',
+            telefono: telefono || 'sin numero',
             mensaje, 
-            comision
+            comision: comision || 'sin comision'
         }
 
         console.log(pedido);
@@ -122,6 +125,7 @@ function MailForm() {
         setDescripcionError(false);
         setNombreError(false);
         setMailError(false);
+        setTelefonoError(false);
         comprobacion();
     },[nombre, mail, mensaje])
 
@@ -215,8 +219,8 @@ function MailForm() {
                         {mailError && <Typography variant='caption' color='error'>
                             Por favor ingrese un mail valido. No se aceptan espacios.
                         </Typography>}
+                        {(orders?.nombre === 'Ciudadania' || orders?.nombre === 'Traducciones') ?
                         <TextField
-                            id="outlined-multiline-flexible"
                             label="Mensaje"
                             placeholder='Por favor detalla aqui toda la informacion que pueda resultar util para explicar tu situacion'
                             multiline
@@ -230,9 +234,32 @@ function MailForm() {
                                 width:'100%'
                             }}
                             />
+                        :
+                        <TextField
+                            label="Telefono"
+                            placeholder='Ingrese su numero de telefono con prefijo internacional.'
+                            color='secondary'
+                            value={telefono}
+                            error={telefonoError}
+                            onChange={(e) => {setTelefono(e.target.value)}}
+                            sx={{
+                                width:'100%'
+                            }}
+                            />
+                        }   
                         {descripcionError && <Typography variant='caption' color='error'>
                             Este campo tambien es necesario.
                         </Typography>}
+                        <TextField
+                            label="País"
+                            placeholder='Ingrese su pais de residencia'
+                            color='secondary'
+                            value={pais}
+                            onChange={(e) => {setPais(e.target.value)}}
+                            sx={{
+                                width:'100%'
+                            }}
+                            />
                         <LocalizationProvider dateAdapter={AdapterMoment}>
                             <DatePicker
                             disableFuture
@@ -247,7 +274,7 @@ function MailForm() {
                             required
                             />
                         </LocalizationProvider>
-                        <FormControl>
+                        {/* <FormControl>
                                 <InputLabel id="demo-country-select-label">Elige tu Pais</InputLabel>
                                 <Select
                                     labelId="demo-country-select-label"
@@ -259,7 +286,7 @@ function MailForm() {
                                         <MenuItem value={p} key={p}>{p}</MenuItem>
                                     ))}
                                 </Select>
-                            </FormControl>
+                            </FormControl> */}
                         {orders.opciones && (
                             <FormControl fullWidth>
                                 <InputLabel id="demo-simple-select-label">Comision</InputLabel>

@@ -50,6 +50,9 @@ export default function Item({elemento}) {
             AR${elemento.precio}
           </Typography>
           <Typography gutterBottom variant="body1" component="span">
+            o
+          </Typography>
+          <Typography gutterBottom variant="body1" component="span">
             €{elemento.precioEuros}
           </Typography>
           {/* {elemento.oferta && 

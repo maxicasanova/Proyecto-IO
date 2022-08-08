@@ -33,8 +33,8 @@ export default function Item({elemento}) {
       <Box component = 'img' src={fondo}
         sx = {{
           display:{xs:'none', sm:'block'},
-          height: {xs:'200px', sm:'400px'},
-          maxWidth:{xs:'260px',sm:'560px'},
+          height: {xs:'200px', sm:'300px'},
+          maxWidth:{xs:'260px',sm:'460px'},
           objectFit:{xs:'cover'},
           borderRadius:'3px',
           boxShadow:'0px 1px 8px rgba(0,0,0,0.4)'
@@ -44,7 +44,7 @@ export default function Item({elemento}) {
           backgroundColor:'white',
           backgroundSize:'cover',
           position:'relative', 
-          top: {sm:'-280px'}, 
+          top: {sm:'-210px'}, 
           right:{sm:'-100px'},
           borderRadius:'3px', 
           padding:{xs:'20px', sm:'20px'},
@@ -84,6 +84,9 @@ export default function Item({elemento}) {
         <Box sx={{display:'flex', flexDirection:'row', gap:'5px', justifyContent:'flex-end'}}>
           <Typography gutterBottom variant="body1" component="span">
               AR${elemento.precio}
+          </Typography>
+          <Typography gutterBottom variant="body1" component="span">
+            o
           </Typography>
           <Typography gutterBottom variant="body1" component="span">
               €{elemento.precioEuros}
