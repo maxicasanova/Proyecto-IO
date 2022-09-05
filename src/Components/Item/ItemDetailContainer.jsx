@@ -2,14 +2,21 @@ import React, { useEffect, useState } from 'react';
 import { doc, getDoc, getFirestore } from 'firebase/firestore';
 import { useLocation, useParams } from 'react-router-dom';
 
-import AsyncCourse from './AsyncCourse';
-import ItemDetail from './ItemDetail';
+import AsyncCourse from '../Courses/AsyncCourse';
+import ItalianoA1Int from '../Courses/ItalianoA1Int';
+import textosCursos from '../../utils/textosCursos.js'
 
 function ItemDetailContainer({id}) {
 
     const { courseId }  = useParams();
     const location = useLocation();
     const [elemento, setElemento] = useState({});
+    const [textos, setTextos] = useState({});
+
+    useEffect(() => {
+        setTextos(textosCursos.find(c => c.id === courseId))
+        console.log(textos)
+    },[])
 
     useEffect (() => {
         console.log('item')
@@ -25,7 +32,7 @@ function ItemDetailContainer({id}) {
     return (
         elemento.id ==='2vd0DXEqgAcKRRFhrKz5' ?
         <AsyncCourse elemento={elemento} /> :
-        <ItemDetail elemento = {elemento} />
+        <ItalianoA1Int elemento={elemento} textos={textos} />
     )
 }
 

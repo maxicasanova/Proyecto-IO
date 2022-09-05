@@ -2,6 +2,7 @@ import { Box, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { collection, getDocs, getFirestore } from 'firebase/firestore';
 
+import CarouselContainer from '../Carousel/CarouselContainer';
 import Item from './Item';
 import { red } from '@mui/material/colors';
 
@@ -49,9 +50,10 @@ function Sale() {
                     fontWeight: 700,
                     color: 'white',
                 }} >
-                El mejor para empezar
+                Inscribite a nuestros cursos
             </Typography>
-            <Item elemento = {prodOf} />
+            {/* <Item elemento = {prodOf} /> */}
+            <CarouselContainer />
         </Box>
     )
 }

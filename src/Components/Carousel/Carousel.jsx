@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import Item from './Item';
 import './Carousel.css';
+
+import React, { useEffect, useState } from 'react';
+
+import Item from './Item';
 
 const Carousel = ({productos,show}) => {
 
@@ -21,7 +23,6 @@ const Carousel = ({productos,show}) => {
 
     useEffect(() => {
         setLength(productos.length + 1)
-        console.log(productos)
     }, [productos])
 
     return (
@@ -36,7 +37,7 @@ const Carousel = ({productos,show}) => {
                 <button onClick={next} className="right-arrow">
                     &gt;
                 </button>}
-                    <div className={`carousel-content show-${show}`} style={{ transform: `translateX(-${currentIndex * ((100 / show)-20)}%)` }}>
+                    <div className={`carousel-content show-${show}`} style={{ transform: `translateX(-${currentIndex * ((50))}%)` }}>
                         {productos.map(e => (
                             <Item key={e.id} elemento={e} />
                         ))}

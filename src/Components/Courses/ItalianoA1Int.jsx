@@ -1,12 +1,11 @@
 import { Box, Button, Container, Typography } from '@mui/material';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import Imagen1 from '../../images/AsyncCourse.png';
 import { OrderContext } from '../Context/OrderContextProvider';
 import React from 'react';
 import { amber } from '@mui/material/colors';
 
-function AsyncCourse({elemento}) {
+function ItalianoA1Int ({elemento, textos}) {
     const navigate = useNavigate();
 
     const { addOrder } = React.useContext(OrderContext);
@@ -18,6 +17,8 @@ function AsyncCourse({elemento}) {
         addOrder(getOrder(elemento, location));
         navigate('/mailform')
     }
+
+    console.log(textos)
 
     return (
         elemento ? (
@@ -52,14 +53,7 @@ function AsyncCourse({elemento}) {
                         maxWidth:{sm:'30vw'},
                         textAlign:'justify'
                     }}>
-                    ¡Empezá HOY a estudiar italiano desde cero, a tu ritmo, sin horarios y con acompañamiento docente!
-                </Typography>
-                <Typography 
-                    sx={{
-                        maxWidth:{sm:'30vw'},
-                        textAlign:'justify'
-                    }}>
-                    Es ideal para aprender y comunicar en italiano rápido y con contenido de calidad.
+                    ¡Empezá HOY a estudiar italiano desde cero!
                 </Typography>
                 <Box 
                     sx={{
@@ -82,7 +76,7 @@ function AsyncCourse({elemento}) {
                 mt:'30px'
             }}>
                 <Typography variant='h3'>
-                ¿Qué incluye el curso?
+                Nuestro curso es para vos si…
                 </Typography>
                 <Box component='ul' 
                     sx={{
@@ -93,22 +87,64 @@ function AsyncCourse({elemento}) {
                         fontWeight: '500',
                         paddingLeft:{xs:'20px !important', sm:'40px'}
                     }}>
-                        <Typography variant='p' component='li'>
-                            16 clases grabadas (+32 horas de video).
+                        {textos.cursoParaVos?.map(e => (
+                            <Typography variant='p' component='li'>{e}</Typography>
+                        ))}
+                        {/* <Typography variant='p' component='li'>
+                        te gustaría hablar italiano desde el primer día, en un ambiente relajado, dinámico y seguro.
                         </Typography>
                         <Typography variant='p' component='li'>
-                            +30 actividades interactivas en las que trabajamos todas las habilidades (lectura, escritura, escucha, producción oral y reflexión gramatical), con juegos, canciones, fichas de trabajo interactivas y ¡mucho más!
+                        querés aprender italiano de manera rápida, divertida, con material exclusivo y de calidad.
                         </Typography>
                         <Typography variant='p' component='li'>
-                            Libros, películas y recursos para seguir aprendiendo italiano.
+                        estás en Italia o estás por viajar a Italia y querés aprender para comunicarte con progresiva fluidez y naturalidad. 
                         </Typography>
                         <Typography variant='p' component='li'>
-                            Acceso a nuestro grupo privado de Telegram.
+                        necesitás rendir el examen para obtener la ciudadanía italiana por matrimonio y querés empezar a prepararte desde ahora.
                         </Typography>
                         <Typography variant='p' component='li'>
-                            Acceso a nuestro canal de Discord para hacer práctica oral con otros compañeros y compañeras. 
+                        querés jugar y construir conocimientos con otros/as, de manera colaborativa y lúdica.
                         </Typography>
-                        <Box component='img' src={Imagen1} />
+                        <Typography variant='p' component='li'>
+                        sos un/a apasionado/a de las lenguas y querés aprender la lengua y la cultura italiana de la mano de docentes profesionales con más de 8 años de experiencia.
+                        </Typography> */}
+                </Box>
+            </Box>
+            <Box sx={{
+                maxWidth:'80%',
+                mt:'30px'
+            }}>
+                <Typography variant='h3'>
+                ¿Qué incluye el curso?
+                </Typography>
+                <Box component='ul' 
+                    sx={{
+                        display:'flex', 
+                        flexDirection:'column',
+                        gap:'16px',
+                        listStyleType: 'none',
+                        fontWeight: '500',
+                        paddingLeft:{xs:'20px !important', sm:'40px'},
+                        mb:'20px'
+                    }}>
+                        {textos.incluye?.map(e => (
+                            <Typography variant='p' component='li'>{e}</Typography>
+                        ))}
+                        {/* <Typography variant='p' component='li'>
+                            1 ENCUENTRO EN VIVO a la semana a través de la plataforma Zoom, para practicar conversación, jugar y hablar (mucho) en italiano.
+                        </Typography>
+                        <Typography variant='p' component='li'>
+                            MATERIAL DE ESTUDIO EXCLUSIVO y ACTIVIDADES INTERACTIVAS en el aula virtual para trabajar lectura, escritura, escucha y reflexión gramatical. Trabajamos con juegos, canciones, videos, noticias, memes y ¡mucho más! para que el aprendizaje sea divertido y natural.
+                        </Typography>
+                        <Typography variant='p' component='li'>
+                            Participación gratuita en los TALLERES DE FONÉTICA ITALIANA del Italiano Oggi Club.
+                        </Typography>
+                        <Typography variant='p' component='li'>
+                            Acceso a LIBROS, PELÍCULAS Y RECURSOS EXTRA para que profundices tus conocimientos de italiano.
+                        </Typography>
+                        <Typography variant='p' component='li'>
+                            Participación en el grupo privado de Telegram e ingreso al canal de Discord para seguir practicando italiano. 
+                        </Typography> */}
                 </Box>
                 <Box sx={{
                     display:'flex',
@@ -117,13 +153,17 @@ function AsyncCourse({elemento}) {
                     justifyContent: 'center',
                     padding:'20px',
                     bgcolor:amber[500],
-                    boxShadow:'0px 1px 8px rgba(0,0,0,0.4)'
+                    boxShadow:'0px 1px 8px rgba(0,0,0,0.4)',
+                    mt:'50px'
                 }}>
                     <Typography variant='h6'>
-                        ¡Accedé al CURSO COMPLETO por sólo AR${elemento.precio} (pesos argentinos) o €{elemento.precioEuros} (euros)! 
+                        ¡Accedé al CURSO por  €{elemento.precioEuros} (euros) mensuales!.
                     </Typography>
-                    <Typography variant='h5'>
-                        Podés pagarlo en 1, 2 o 4 cuotas.
+                    <Typography variant='h6'>
+                        Promoción especial para argentinos/as: AR${elemento.precio} por mes!
+                    </Typography>
+                    <Typography variant='h6'>
+                        Promoción especial para brasileros/as: R$ {elemento.precioReales} por mes!.
                     </Typography>
                 </Box>
                 <Box sx={{display:'flex',justifyContent:'center', margin:'10px auto'}}>
@@ -150,33 +190,24 @@ function AsyncCourse({elemento}) {
                         paddingLeft:{xs:'20px !important', sm:'40px'}
                         // fontWeight: '500',
                     }}>
-                        <Typography variant='p' component='li' sx={{fontWeight: '500'}}>
+                        {textos.faq?.map(e => (
+                        <Typography variant='p' component='li'>{e}</Typography>
+                        ))}
+                        {/* <Typography variant='p' component='li' sx={{fontWeight: '500'}}>
                             1.	¿Cuáles son los medios y modalidades de pago? 
                         </Typography>
                             Recibimos transferencia bancaria a una cuenta argentina, transferencia a una cuenta bancaria española o pago por PayPal.
                         <Typography variant='p' component='li' sx={{fontWeight: '500'}}>
-                            2. ¿Cuál es el tiempo previsto para la finalización del curso? 
+                            2. ¿Qué significa nivel A1? ¿Para qué sirve? 
                         </Typography>
-                            El tiempo previsto de cursado es de 4 meses, pero ¡podés hacerlo a tu ritmo!
+                            El NIVEL A1 es el primer nivel del Cuadro Común Europeo de Referencia para las Lenguas y es conocido como NIVEL DE CONTACTO. Este primer nivel es fundamental para construir las bases en el estudio del italiano y aprender a comunicarse en contextos de alta frecuencia y de primera necesidad, como por ejemplo: ir al supermercado, al bar o al restaurante en Italia; presentarte, dar y pedir información personal; pedir indicaciones en la ciudad; hablar de tus hábitos y rutina cotidiana, etc. Es ideal para quienes necesiten viajar a Italia con una base de italiano.
                         <Typography variant='p' component='li' sx={{fontWeight: '500'}}>
-                            3. ¿Hasta cuándo pueden tener acceso al aula virtual?
-                        </Typography>
-                            Tenés acceso al aula virtual por seis meses, pero si necesitás más tiempo para terminar ¡sólo tenés que avisarnos!
-                        <Typography variant='p' component='li' sx={{fontWeight: '500'}}>
-                            4. ¿Hay espacios de consulta y acompañamiento para las tareas?
-                        </Typography>
-                            ¡Sí! Podés realizar tus consultas a la docente a través del aula virtual o a través del grupo de Telegram del curso. Además, vas a recibir correcciones y comentarios personalizados.
-                        <Typography variant='p' component='li' sx={{fontWeight: '500'}}>
-                            5. ¿Cómo puedo realizar las actividades de producción oral?
+                            3. ¿Entregan certificado al final del curso?
                         </Typography> 
-                            Tenemos un canal de Discord para realizar las actividades de producción oral con otros/as compañeros/as del curso. En nuestra sala de estudio están siempre abiertas las salas de voz, con o sin video, para que puedas practicar en el horario que prefieras.
-                        <Typography variant='p' component='li' sx={{fontWeight: '500'}}>
-                            6. ¿Entregan certificado al final del curso?
-                        </Typography> 
-                            ¡Sí! Entregamos un certificado de finalización del curso. 
+                            ¡Sí! Entregamos un certificado de finalización del curso.  */}
                     </Box>
                 <Box sx={{display:'flex',justifyContent:'center', margin:'10px auto'}}>
-                    <Button variant='contained' color='secondary' onClick={() => {handleClickOrder(elemento)}} >Quiero Empezar</Button>
+                    <Button variant='contained' color='secondary' onClick={() => {handleClickOrder(elemento)}} >¡INSCRIBITE AHORA!</Button>
                 </Box>
                 <Box sx={{display:'flex',justifyContent:'center', margin:'10px auto'}}>
                     ¿Tenés otra duda? ¡Escribí por Whatsapp a la secretaría!
@@ -189,4 +220,4 @@ function AsyncCourse({elemento}) {
     )
 }
 
-export default AsyncCourse
+export default ItalianoA1Int

@@ -7,6 +7,7 @@ import Citizenship from './Components/Citizenship/Citizenship';
 import Club from './Components/Club/Club';
 import Confirmation from './Components/CheckOut/Confirmation';
 import Footer from './Components/Footer/Footer';
+import GoogleForm from './Components/CheckOut/GoogleForm';
 import Instagram from './Components/InstagramIcon/Instagram';
 import ItemDetailContainer from './Components/Item/ItemDetailContainer';
 import ItemListContainer from './Components/Item/ItemListContainer';
@@ -42,7 +43,7 @@ function App() {
           <Route exact path='/citizenship' element={<Citizenship />} />
           <Route exact path='/translations' element={<Translations />} />
           <Route exact path='/rutaOculta' element={<Secretaria />} />
-          <Route exact path='/mailform' element={<MailForm />} />
+          <Route exact path='/mailform' element={<GoogleForm />} />
           <Route exact path='/confirmation' element={<Confirmation />} />
           <Route exact path='/order/problems' element={<OrderWithProblems />} />
           <Route exact path='/club' element={<Club />} />

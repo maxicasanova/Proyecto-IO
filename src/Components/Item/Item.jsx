@@ -42,31 +42,24 @@ export default function Item({elemento}) {
         <Typography gutterBottom variant="h5" component="div">
             {elemento.nombre}
         </Typography>
+        <Box 
+          sx={{
+            display: 'flex', 
+            flexDirection:'column', 
+            alignItems:'center', 
+            justifyContent:'center',
+            alignSelf:'flex-end'
+            }}>
+          <Typography gutterBottom variant="caption" component="span">
+            Precio completo €{elemento.precioEuros}
+          </Typography>
+          <Typography gutterBottom variant="caption" component="span">
+            Para argentinos/as: AR${elemento.precio}
+          </Typography>
+        </Box>
         <Typography variant="subtitle1" color="text.secondary">
             {elemento.fecha}
         </Typography>
-        <Box sx={{display: 'flex', gap:'5px', justifyContent: 'flex-end', alignItems: 'baseline'}}>
-          <Typography gutterBottom variant="body1" component="span">
-            AR${elemento.precio}
-          </Typography>
-          <Typography gutterBottom variant="body1" component="span">
-            o
-          </Typography>
-          <Typography gutterBottom variant="body1" component="span">
-            €{elemento.precioEuros}
-          </Typography>
-          {/* {elemento.oferta && 
-            <Typography 
-                gutterBottom 
-                variant="body1" 
-                component="span" 
-                sx={{
-                  backgroundColor: green[700], 
-                  borderRadius : '3px',
-                  padding:'2px'}}>
-              {elemento.ahorro}
-            </Typography> } */}
-        </Box>
         <Typography
             variant="body2" 
             color="text.secondary" 
