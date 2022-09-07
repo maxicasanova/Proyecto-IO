@@ -4,7 +4,8 @@ import React, { useEffect, useState } from 'react';
 
 import Item from './Item';
 
-const Carousel = ({productos,show}) => {
+const Carousel = ({productos}) => {
+    const show = 2;
 
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -37,7 +38,7 @@ const Carousel = ({productos,show}) => {
                 <button onClick={next} className="right-arrow">
                     &gt;
                 </button>}
-                    <div className={`carousel-content show-${show}`} style={{ transform: `translateX(-${currentIndex * ((50))}%)` }}>
+                    <div className={`carousel-content show-${show}`} style={{ transform: `translateX(-${currentIndex * (100/show)}%)` }}>
                         {productos.map(e => (
                             <Item key={e.id} elemento={e} />
                         ))}

@@ -17,13 +17,13 @@ function Translations() {
     const handleClickOrder = () => {
         const elemento = {nombre:'Traducciones'}
         addOrder(getOrder(elemento, location));
-        navigate('/mailform')
+        navigate('/serviceform')
     }
 
     const handleClickCitizenship = () => {
         const elemento = {nombre:'Ciudadania'}
         addOrder(getOrder(elemento, location));
-        navigate('/mailform')
+        navigate('/serviceform')
     }
 
     return (

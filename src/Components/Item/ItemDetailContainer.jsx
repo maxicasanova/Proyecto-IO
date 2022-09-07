@@ -30,7 +30,7 @@ function ItemDetailContainer({id}) {
     },[location])
 
     return (
-        elemento.id ==='2vd0DXEqgAcKRRFhrKz5' ?
+        courseId ==='2vd0DXEqgAcKRRFhrKz5' ?
         <AsyncCourse elemento={elemento} /> :
         <ItalianoA1Int elemento={elemento} textos={textos} />
     )

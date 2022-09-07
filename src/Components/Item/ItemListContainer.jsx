@@ -23,7 +23,14 @@ function ItemListContainer() {
     },[])
 
     useEffect (() => {
-        setCursosFiltrados(elementos.filter(e => e.visible === true));
+        setCursosFiltrados(elementos.filter(e => e.visible === true).sort(function (a, b) {
+            if (a.orden > b.orden) {
+                return 1;
+            }
+            if (a.orden < b.orden) {
+                return -1;
+            }})
+        );
     },[elementos]);
     
     return (

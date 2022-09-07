@@ -42,7 +42,7 @@ function App() {
           <Route exact path='/courses/:courseId' element={<ItemDetailContainer />} />
           <Route exact path='/citizenship' element={<Citizenship />} />
           <Route exact path='/translations' element={<Translations />} />
-          <Route exact path='/rutaOculta' element={<Secretaria />} />
+          <Route exact path='/serviceform' element={<MailForm />} />
           <Route exact path='/mailform' element={<GoogleForm />} />
           <Route exact path='/confirmation' element={<Confirmation />} />
           <Route exact path='/order/problems' element={<OrderWithProblems />} />

@@ -23,7 +23,7 @@ export default function Item({elemento}) {
 
   const handleClickOrder = (elemento) => {
     addOrder(getOrder(elemento, location));
-    navigate('/checkout');
+    navigate('/mailform');
   }
 
   const handleClickInfo = (id) => {
@@ -31,7 +31,7 @@ export default function Item({elemento}) {
   }
 
   return (
-    <Card sx={{ maxWidth: 300, borderRadius:'20px' }}>
+    <Card sx={{ maxWidth: 300, borderRadius:'20px', minWidth:'280px' }}>
       <CardMedia
         component="img"
         alt="green iguana"

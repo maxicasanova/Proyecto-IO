@@ -17,7 +17,7 @@ function Citizenship() {
     const handleClickOrder = () => {
         const elemento = {nombre:'Ciudadania'}
         addOrder(getOrder(elemento, location));
-        navigate('/mailform')
+        navigate('/serviceform')
     }
 
     React.useEffect(() => {

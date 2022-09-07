@@ -32,6 +32,7 @@ function Sale() {
     return (
         <Box sx={{
                 backgroundColor : red[500],
+                width:'100%',
                 boxShadow:'0px 1px 8px rgba(0,0,0,0.4)',
                 minHeight : {xs:'90vh',sm:'105vh'},
                 display: 'flex',
@@ -49,10 +50,10 @@ function Sale() {
                     mt:{xs:'20px', sm:'0'},
                     fontWeight: 700,
                     color: 'white',
+                    maxWidth:'90%'
                 }} >
                 Inscribite a nuestros cursos
             </Typography>
-            {/* <Item elemento = {prodOf} /> */}
             <CarouselContainer />
         </Box>
     )

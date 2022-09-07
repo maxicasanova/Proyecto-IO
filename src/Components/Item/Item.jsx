@@ -42,7 +42,7 @@ export default function Item({elemento}) {
         <Typography gutterBottom variant="h5" component="div">
             {elemento.nombre}
         </Typography>
-        <Box 
+        {/* <Box 
           sx={{
             display: 'flex', 
             flexDirection:'column', 
@@ -56,7 +56,7 @@ export default function Item({elemento}) {
           <Typography gutterBottom variant="caption" component="span">
             Para argentinos/as: AR${elemento.precio}
           </Typography>
-        </Box>
+        </Box> */}
         <Typography variant="subtitle1" color="text.secondary">
             {elemento.fecha}
         </Typography>
