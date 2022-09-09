@@ -20,7 +20,7 @@ function ClubLanding() {
     const handleSubscribe = () => {
         const elemento = {nombre:'Club'}
         addOrder(getOrder(elemento, ubicacion));
-        navigate('/mailform');
+        navigate('/serviceform');
     }
 
     return (

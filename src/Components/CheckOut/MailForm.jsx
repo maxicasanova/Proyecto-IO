@@ -40,7 +40,16 @@ function MailForm() {
                     to_mail: mail
                 }
                 await emailjs.send("service_x0460fk","template_odt99n8", template,'VlskrU6LYSJ-DIHkI');
-                // await emailjs.send('service_x0460fk', 'template_1rifi3e', templateParams,'VlskrU6LYSJ-DIHkI');
+            } else if (orders.nombre === 'Club'){
+                const templateParams = {
+                    course_name: orders.nombre,
+                    to_name: nombre,
+                    mensaje: mensaje,
+                    to_mail: mail,
+                    precio: orders.precio,
+                    precioEuos: orders.precioEuros
+                }
+                await emailjs.send('service_x0460fk', 'template_1rifi3e', templateParams,'VlskrU6LYSJ-DIHkI');
             }
         }
         try{

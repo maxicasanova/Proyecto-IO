@@ -19,9 +19,9 @@ function Club() {
     const navigate = useNavigate();
 
     const handleSubscribe = () => {
-        const elemento = {nombre:'Club'}
+        const elemento = {nombre:'Club', precio:precioClub.precio, precioEuros: precioClub.precioEuros}
         addOrder(getOrder(elemento, ubicacion));
-        navigate('/mailform');
+        navigate('/serviceform');
     }
 
     React.useEffect(() => {
